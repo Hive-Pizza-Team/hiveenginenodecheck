@@ -1,0 +1,14 @@
+{
+    "enable_discord": true,
+    "discordWebHookUrl": "https://discord.com/api/webhooks/INSERTWEBHOOKURL",
+    "primaryNodeRPC": "https://engine.hive.pizza",
+    "compareNodesRPC": [
+        "https://herpc.dtools.dev",
+        "https://herpc.actifit.io",
+        "https://api.primersion.com",
+        "https://he.c0ff33a.uk",
+        "https://he.sourov.dev",
+        "https://engine.rishipanthee.com"
+    ],
+    "timeDelay": 30000
+}
