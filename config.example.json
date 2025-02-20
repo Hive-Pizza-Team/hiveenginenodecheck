@@ -1,14 +1,34 @@
 {
-    "enable_discord": true,
-    "discordWebHookUrl": "https://discord.com/api/webhooks/INSERTWEBHOOKURL",
-    "primaryNodeRPC": "https://engine.hive.pizza",
-    "compareNodesRPC": [
-        "https://herpc.dtools.dev",
-        "https://herpc.actifit.io",
-        "https://api.primersion.com",
-        "https://he.c0ff33a.uk",
-        "https://he.sourov.dev",
-        "https://engine.rishipanthee.com"
-    ],
-    "timeDelay": 30000
+    "enable_discord": false,
+    "discordWebHookUrl": "https://discord.com/api/webhooks/",
+    "hiveEngine": {
+        "apiNodes": [
+            "https://engine.hive.pizza",
+            "https://api.hive-engine.com/rpc",
+            "https://api2.hive-engine.com/rpc"
+        ]
+    },
+    "hive": {
+        "apiNodes": [
+            "https://api.hive.blog",
+            "https://api.openhive.network"
+        ]
+    },
+    "checkBlocks": {
+        "timeDelay": 60000
+    },
+    "checkRounds": {
+        "timeDelay": 60000
+    },
+    "checkRCs": {
+        "pctLowThreshold": 50,
+        "pctHighThreshold": 99,
+        "timeDelay": 180000
+    },
+    "checkDisabled": {
+        "timeDelay": 60000
+    },
+    "checkNewWitness": {
+        "timeDelay": 60000
+    }
 }

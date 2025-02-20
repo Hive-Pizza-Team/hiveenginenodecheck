@@ -8,7 +8,7 @@ function send_discord_message(body) {
       method: "post",
       url: config.discordWebHookUrl,
       data: {
-        username: "HENodeCheck",
+        username: "witnessserverops",
         content: body,
       },
     });
