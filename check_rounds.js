@@ -14,7 +14,7 @@ async function checkRounds() {
             const oldStatus = getWitnessStatus(wit.account);
             if (oldStatus.missedRoundsInARow != wit.missedRoundsInARow) {
                 // should notify = true
-                const message = `${'@'+wit.account} missed ${wit.missedRoundsInARow} rounds`;
+                const message = `\`@${wit.account}\` missed ${wit.missedRoundsInARow} rounds`;
                 send_discord_message(message);
                 console.error(message);
                 
@@ -26,7 +26,7 @@ async function checkRounds() {
             const oldStatus = getWitnessStatus(wit.account);
             if (oldStatus.missedRoundsInARow != wit.missedRoundsInARow) {
                 // should notify = true
-                const message = `${'@'+wit.account} recovered`;
+                const message = `\`@${wit.account}\` recovered on rounds`;
                 send_discord_message(message);
                 console.error(message);
 

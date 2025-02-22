@@ -16,7 +16,7 @@ async function checkRCs() {
         const oldStatus = getWitnessStatus(rcsOne.account);
 
         if (pct <= config.checkRCs.pctLowThreshold && oldStatus.lowRC != 1) {
-            const message = `${rcsOne.account} - has ${pct}% RCs}`
+            const message = `\`@${rcsOne.account}\` - has ${pct}% RCs`
             console.error(message);
             send_discord_message(message);
 
@@ -25,7 +25,7 @@ async function checkRCs() {
             setWitnessStatus(newStatus);
             
         } else if (pct > config.checkRCs.pctHighThreshold && oldStatus.lowRC == 1) {
-            const message = `${rcsOne.account} - recovered to ${pct}% RCs}`;
+            const message = `\`@${rcsOne.account}\` - recovered to ${pct}% RCs`;
             console.error(message);
             send_discord_message(message);
 

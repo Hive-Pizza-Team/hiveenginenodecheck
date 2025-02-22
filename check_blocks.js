@@ -62,7 +62,7 @@ async function checkBlocks() {
         const oldStatus = getApiNodeStatus(apiNode);
 
         if (blocksBehind >= 500 && oldStatus.behindOnBlocks == 0) {
-            const message = `${apiNode} is ${blocksBehind} blocks behind`;
+            const message = `\`${apiNode}\` is ${blocksBehind} blocks behind`;
             console.error(message);
             send_discord_message(message);
 
@@ -71,7 +71,7 @@ async function checkBlocks() {
             setApiNodeStatus(newStatus);
 
         } else if (blocksBehind < 20 && oldStatus.behindOnBlocks == 1) {
-            const message = `${apiNode} caught up on blocks`;
+            const message = `\`${apiNode}\` caught up on blocks`;
             console.error(message);
             send_discord_message(message);
 

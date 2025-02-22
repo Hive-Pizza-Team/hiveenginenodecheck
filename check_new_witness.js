@@ -10,7 +10,7 @@ async function checkNewWitness() {
         const oldStatus = getWitnessStatus(wit.account);
 
         if (!oldStatus) {
-            const message = `new node found: ${wit.account}`;
+            const message = `new witness found: \`@${wit.account}\``;
             console.error(message);
             send_discord_message(message);
 

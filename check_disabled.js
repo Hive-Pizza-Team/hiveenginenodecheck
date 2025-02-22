@@ -10,7 +10,7 @@ async function checkDisabled() {
         const oldStatus = getWitnessStatus(wit.account);
 
         if (!wit.enabled && oldStatus.enabled == 1) {
-            const message = `${wit.account} - disabled`;
+            const message = `\`@${wit.account}\` was disabled`;
             console.error(message);
             send_discord_message(message);
 
@@ -19,7 +19,7 @@ async function checkDisabled() {
             setWitnessStatus(newStatus);
             
         } else if (wit.enabled && oldStatus.enabled == 0) {
-            const message = `${wit.account} - enabled`;
+            const message = `\`@${wit.account}\` was enabled`;
             console.error(message);
             send_discord_message(message);
 
