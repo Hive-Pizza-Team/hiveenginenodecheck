@@ -4,7 +4,7 @@ import { getWitnesses } from "./get_witnesses.js";
 
 
 async function checkDisabled() {
-    const witnesses = await getWitnesses(true);
+    const witnesses = await getWitnesses(false);
 
     for (const wit of witnesses) {
         const oldStatus = getWitnessStatus(wit.account);
