@@ -13,6 +13,9 @@ async function checkDisabled() {
         }
 
         const oldStatus = getWitnessStatus(wit.account);
+        if (!oldStatus) {
+            continue;
+        }
 
         if (!wit.enabled && oldStatus.enabled == 1) {
             const message = `\`@${wit.account}\` was disabled`;
