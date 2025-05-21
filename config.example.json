@@ -26,7 +26,10 @@
         "timeDelay": 180000
     },
     "checkDisabled": {
-        "timeDelay": 60000
+        "timeDelay": 60000,
+        "ignoreNodes": [
+            "node123"
+        ]
     },
     "checkNewWitness": {
         "timeDelay": 60000
