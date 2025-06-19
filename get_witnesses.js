@@ -23,29 +23,30 @@ async function getWitnesses(enabledOnly = false) {
   }
 }
 
-async function _getWitnessesNoCache() {
-  const apiNode = config.hiveEngine.apiNodes[0];
-  try {
-    var witnesses = await axios({
-      method: "post",
-      url: apiNode + "/contracts",
-      data: {
-        jsonrpc: "2.0",
-        method: "find",
-        params: {
-          contract: "witnesses",
-          table: "witnesses",
-          query: {},
-          limit: 100, // default: 1000
-          offset: 0, // default: 0
-          indexes: [{ index: "approvalWeight", descending: true }], // default: empty, an index is an object { index: string, descending: boolean },
+async function _getWitnessesNoCache(apiNode, apiNodeNext) {
+  for (const apiNode of config.hiveEngine.apiNodes) {
+    try {
+      var witnesses = await axios({
+        method: "post",
+        url: apiNode + "/contracts",
+        data: {
+          jsonrpc: "2.0",
+          method: "find",
+          params: {
+            contract: "witnesses",
+            table: "witnesses",
+            query: {},
+            limit: 100, // default: 1000
+            offset: 0, // default: 0
+            indexes: [{ index: "approvalWeight", descending: true }], // default: empty, an index is an object { index: string, descending: boolean },
+          },
+          id: 1,
         },
-        id: 1,
-      },
-    });
-    return witnesses.data.result;
-  } catch (err) {
-    console.warn(`${apiNode} didn't respond`, err);
+      });
+      return witnesses.data.result;
+    } catch (err) {
+      console.warn(`${apiNode} didn't respond`, err);
+    }
   }
 }
 
